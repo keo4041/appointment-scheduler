@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package video;
+
+// Video buffer message
+message VideoBuffer {
+  bytes buffer = 1;
+}
+
+// Video streaming service
+service VideoService {
+  // Send video buffer
+  rpc SendVideoBuffer(stream VideoBuffer) returns (stream VideoBuffer);
+}
